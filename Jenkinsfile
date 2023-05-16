@@ -29,7 +29,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        withAWS(region: 'us-west-2', credentials: 'aws-creds') {
+        withAWS(region: 'us-east-1', credentials: 'aws-creds') {
           sh 'scp -r build/* ec2-user@ec2-12DIGITACCOUNT.us-east-1.compute.amazonaws.com:/var/www/html'
         }
       }
